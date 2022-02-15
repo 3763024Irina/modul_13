@@ -1,0 +1,90 @@
+/*1.Создайте кортеж для двух человек с одинаковыми типами данных и параметрами.
+При том одни значения доставайте по индексу, а другие — по параметру.
+Пример (для демонстрации задачи, чтобы было понимание, что надо делать):*/
+
+/*let car1 = (carName: "mercedes", yearIssue: 2018, enginePower: 1.8)
+
+let car2 = (carName: "audi", yearIssue: 2019, enginePower: 2.0)
+
+car1.2
+car1.enginePower
+car2.enginePower
+car1.0
+car1.1*/
+
+
+//2.Создайте массив «дни в месяцах» (12 элементов содержащих количество дней в соответствующем месяце). Используя цикл for и этот массив: выведите количество дней в каждом месяце
+/*let nameMonth: [String] = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
+let dayinMonth: [Int] = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+for i in 0...11 {
+    print("\(nameMonth[i]) \(dayinMonth[i])")
+        
+}*/
+
+/*let dayinMonth: [(String, Int)] = [("Январь", 31), ("Февраль", 28), ("Март", 31), ("Апрель", 30), ("Май", 31), ("Июнь", 30), ("Июль", 31), ("Август", 31), ("Сентябрь", 30), ("Октябрь", 31), ("Ноябрь", 30), ("Декабрь", 31) ]
+for i in 0...11 {
+    print("В месяце \(dayinMonth[i].0) \(dayinMonth[i].1) д.")
+          
+}*/
+
+/*let dayinMonth: [(String, Int)] = [("Январь", 31), ("Февраль", 28), ("Март", 31), ("Апрель", 30), ("Май", 31), ("Июнь", 30), ("Июль", 31), ("Август", 31), ("Сентябрь", 30), ("Октябрь", 31), ("Ноябрь", 30), ("Декабрь", 31) ]
+for i in 0...11 {
+    print("\(dayinMonth[i])")
+}*/
+
+/*let dayinMonth: [(String, Int)] = [("Январь", 31), ("Февраль", 28), ("Март", 31), ("Апрель", 30), ("Май", 31), ("Июнь", 30), ("Июль", 31), ("Август", 31), ("Сентябрь", 30), ("Октябрь", 31), ("Ноябрь", 30), ("Декабрь", 31) ]
+
+for i in (0...11).reversed() {
+    print("\(dayinMonth[i])")
+}*/
+
+    //расчитать количество дней между датами
+/*let date1 = DateComponents(calendar: .current, year: 2022, month: 02, day:11).date!
+let date2 = DateComponents(calendar: .current, year: 2022, month: 12, day:31).date!
+
+extension Date {
+    func days(from date: Date) -> Int {
+        return Calendar.current.dateComponents([.day], from: date, to: self).day!
+    
+}
+}
+
+let days = date2.days(from: date1)*/
+
+
+//создайте словарь.
+var listStudent: [String: Int] = ["Ivan, Ivanov": 3,
+                                  "Oleg Smirnov": 1,
+                                  "Katerina Penrova": 2]
+
+//повысьте студенту оценку за экзамен:
+
+listStudent["Ivan, Ivanov"] = 4
+print(listStudent)
+
+//добавить ключ, значение
+listStudent["Sveta, Sokolova"] = 2
+listStudent["Gena, Krokodil"] = 5
+
+print(listStudent)
+
+
+//удалить
+listStudent["Ivan, Ivanov"] = nil
+
+print(listStudent)
+//сортировка
+/*listStudent.forEach{(key,value) in
+    if value>=3{
+        print(key, "Retake!")
+    }else{
+        print(key, "Congretulacion!")
+    }
+}*/
+//average
+let count = listStudent.count
+let sum = listStudent.reduce(0) { partialResult, element in return partialResult + element.value
+}
+let average = sum/count
+print("average = \(average)")
+
